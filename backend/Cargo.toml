@@ -1,0 +1,37 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = ["crud_routes", "migration"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait = "0.1.85"
+base64 = "0.22.0"
+bcrypt = "0.16.0"
+chrono = { version = "0.4.38", features = ["serde"] }
+clap = { version = "4.5.1", features = ["cargo"] }
+config-tools = "0.5.0"
+crud_routes = { path = "./crud_routes" }
+deadpool = { version = "0.12.2", features = ["managed"] }
+dotenv = "0.15.0"
+jsonwebtoken = "9.3.0"
+ldap3 = "0.11.5"
+once_cell = { version = "1.20.2", features = ["std"] }
+rand = "0.8.5"
+reqwest = "0.12.9"
+rocket = { version = "0.5.0", features = ["json", "secrets"] }
+sea-orm = { version = "1.1.11", features = ["sqlx-sqlite", "sqlx-mysql", "runtime-tokio-rustls", "macros"] }
+sea-orm-migration = "1.1.11"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.96"
+tokio = { version = "1.42.0", features = ["sync"] }
+tracing = "0.1.40"
+tracing-appender = "0.2.3"
+tracing-subscriber = { version = "0.3.19", features = ["fmt"] }
+
+[package.metadata.scripts]
+pre-build = "cd ../frontend && npm install && npm run build"
