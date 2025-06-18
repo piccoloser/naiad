@@ -1,39 +1,37 @@
 use sea_orm_migration::prelude::*;
 
 #[derive(Iden)]
-pub enum Sessions {
+pub enum Orgs {
     Table,
-    Token,
+    Id,
     CreatedAt,
     RemovedAt,
+    Suspended,
 }
 
 #[derive(Iden)]
-pub enum Users {
+pub enum OrgDetails {
     Table,
-    Id,
-    Username,
-    Email,
-    PwHash,
-    CreatedAt,
-    UpdatedAt,
-    RemovedAt,
-}
-
-#[derive(Iden)]
-pub enum UserRoles {
-    Table,
-    Id,
-    UserId,
-    RoleId,
-    CreatedAt,
-    UpdatedAt,
-    RemovedAt,
-}
-
-#[derive(Iden)]
-pub enum Roles {
-    Table,
-    Id,
+    OrgId,
     Title,
+    Bio,
+}
+
+#[derive(Iden)]
+pub enum OrgPolicies {
+    Table,
+    OrgId,
+    PolicyId,
+    CreatedAt,
+    UpdatedAt,
+    RemovedAt,
+}
+
+#[derive(Iden)]
+pub enum UserOrgs {
+    Table,
+    OrgId,
+    UserId,
+    CreatedAt,
+    RemovedAt,
 }
