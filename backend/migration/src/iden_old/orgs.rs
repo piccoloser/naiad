@@ -6,7 +6,6 @@ pub enum Orgs {
     Id,
     CreatedAt,
     RemovedAt,
-    Suspended,
 }
 
 #[derive(Iden)]
@@ -28,7 +27,7 @@ pub enum OrgPolicies {
 }
 
 #[derive(Iden)]
-pub enum UserOrgs {
+pub enum OrgUsers {
     Table,
     OrgId,
     UserId,

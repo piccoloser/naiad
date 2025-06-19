@@ -1,6 +1,6 @@
 pub use sea_orm_migration::prelude::*;
 
-mod iden;
+mod iden_old;
 
 pub struct Migrator;
 

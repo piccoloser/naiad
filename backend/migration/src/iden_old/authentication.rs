@@ -69,21 +69,3 @@ pub enum RolePermissions {
     CreatedAt,
     RemovedAt,
 }
-
-#[derive(Iden)]
-pub enum UserSuspensions {
-    Table,
-    UserId,
-    CreatedAt,
-    ExpiresAt,
-    Reason,
-}
-
-#[derive(Iden)]
-pub enum UserBlocks {
-    Table,
-    BlockerId,
-    BlockedId,
-    CreatedAt,
-    RemovedAt,
-}

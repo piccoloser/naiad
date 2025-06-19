@@ -38,7 +38,6 @@ pub enum Users {
     Id,
     CreatedAt,
     UpdatedAt,
-    Suspended,
 }
 
 #[derive(Iden)]
